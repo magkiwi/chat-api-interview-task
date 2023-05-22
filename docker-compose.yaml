@@ -1,0 +1,14 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_PASSWORD: 'chat-api'
+      POSTGRES_USER: 'chat-api'
+      POSTGRES_DB: 'chat-api'
+    volumes:
+      - ./data:/var/lib/postgresql/data
